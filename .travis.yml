@@ -1,0 +1,27 @@
+sudo: required
+
+language: node_js
+
+arch:
+  - amd64
+
+dist:
+  - bionic
+
+node_js:
+  - "lts/*"
+
+services:
+  - mongo
+
+env:
+  - NODE_ENV=travis
+
+before_script:
+- npm install
+
+script:
+  - npm test
+
+notifications:
+  email: false
